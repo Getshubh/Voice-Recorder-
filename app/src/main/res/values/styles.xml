@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="slider_red">
+        <item name="colorPrimary">@color/color_blue</item>
+    </style>
+
+    <style name="LinearLayoutStyle">
+        <item name="android:width">@dimen/dimen_50dp</item>
+        <item name="android:height">@dimen/dimen_50dp</item>
+    </style>
+
+</resources>

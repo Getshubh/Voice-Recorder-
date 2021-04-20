@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Voice Recorder</string>
+    <string name="title_home">Voice Recorder</string>
+    <string name="title_dashboard">All Recordings</string>
+    <string name="title_notifications">Settings</string>
+
+    <string name="channel_name">Notification</string>
+    <string name="channel_description">Detailed Notification</string>
+    <string name="voice_recorder_title">Start Recorder</string>
+    <string name="stop_voice_recorder_title">Stop Recorder</string>
+    <string name="open_file">Open All Files</string>
+    <string name="device_description">Device Description</string>
+    <string name="device_admin_label">Device Admin</string>
+    <string name="text_call_recording">Auto Call Recording</string>
+    <string name="text_delete_msg">Are you sure you want to delete this recording ?</string>
+    <string name="txt_delete_header">Delete</string>
+    <string name="start_voice_recorder_title">Recording</string>
+    <string name="play_voice_recorder_title">Playing</string>
+    <string name="start_recording">Start Recording</string>
+    <string name="stop_recording">Stop Recording</string>
+    <string name="pause_recording">Pause Recording</string>
+    <string name="play_recording">Play Recorded Audio</string>
+    <string name="stop_playing_audio">Stop Playing Audio</string>
+    <string name="recording_stopped_message">Recording stopped while scrolling</string>
+    <string name="fragment_destroy_message">Recording stopped while navigating to other pages</string>
+    <string name="hint_file_name">Search Recording</string>
+    <string name="no_recording">No Recordings Found</string>
+    <string name="permission_denied_error">Sharing File Failed</string>
+</resources>

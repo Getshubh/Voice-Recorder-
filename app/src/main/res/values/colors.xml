@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#0370C8</color>
+    <color name="purple_500">#035291</color>
+    <color name="purple_700">#033A66</color>
+    <color name="teal_200">#09B5A5</color>
+    <color name="teal_700">#0B988A</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="colorPrimary">@color/color_orange</color>
+    <color name="colorPrimarydark">#0993A5</color>
+    <color name="colorPrimaryVariant">@color/color_orange_dark</color>
+    <color name="colorOnPrimary">@color/white</color>
+    <!-- Secondary brand color. -->
+    <color name="colorSecondary">@color/teal_200</color>
+    <color name="colorSecondaryVariant">@color/teal_700</color>
+    <color name="colorOnSecondary">@color/black</color>
+
+    <color name="colorgrey">#FFA49595</color>
+    <color name="colorlightgrey">#a1a1a1</color>
+
+    <color name="color_icon_green">#1ABC9C</color>
+    <color name="color_white">#ffffff</color>
+    <color name="color_blue">#0370C8</color>
+    <color name="color_orange">#04A5BA</color>
+    <color name="color_orange_dark">#04A5BA</color>
+    <color name="color_disable_grey">#666666</color>
+    <color name="color_search_bg">#E8E6E6</color>
+</resources>

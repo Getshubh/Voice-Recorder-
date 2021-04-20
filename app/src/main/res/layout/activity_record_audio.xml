@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/color_white">
+
+
+<ImageView
+    android:layout_width="@dimen/dimen_100dp"
+    android:layout_height="@dimen/dimen_100dp"
+    android:background="@drawable/ic_app"
+    android:layout_centerHorizontal="true"
+    android:layout_above="@+id/ll_timer"
+    app:tint="@color/colorPrimary" />
+
+    <LinearLayout
+        android:id="@+id/ll_timer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/tv_timer_ss"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00:00"
+            android:textColor="#030000"
+            android:textSize="40sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+          <TextView android:id="@+id/tv_voice_rec_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Voice Recorder"
+            android:textSize="16sp"
+            android:layout_centerInParent="true"
+            android:textColor="@color/color_disable_grey"/>
+
+        <TextView android:id="@+id/tv_voice_rec_dot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="18sp"
+            android:layout_toRightOf="@+id/tv_voice_rec_text"
+            android:textColor="@color/color_disable_grey"/>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true">
+    <View
+        android:layout_above="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="10dp"
+        android:background="@color/colorgrey"/>
+
+    <LinearLayout
+         android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_marginLeft="@dimen/dimen_10dp"
+        android:layout_marginRight="@dimen/dimen_10dp"
+        android:weightSum="4">
+
+        <ImageView
+            android:id="@+id/btnRecord"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="20dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_start_blue"
+             />
+
+        <ImageView
+            android:id="@+id/btnStop"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="20dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_stop_grey" />
+
+<!--
+  <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_pause_resume"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/ic_pause" />
+-->
+
+        <ImageView
+            android:id="@+id/btnPlay"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="20dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_play_grey" />
+
+        <ImageView
+            android:id="@+id/btnStopPlay"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="20dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_stop_grey" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@+id/ll_bottom"
+        android:id="@+id/ll_bottom_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+android:layout_marginLeft="@dimen/dimen_10dp"
+        android:layout_marginRight="@dimen/dimen_10dp"
+        android:gravity="center"
+        android:weightSum="4"
+        android:layout_marginBottom="@dimen/dimen_10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_start"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:text="@string/start_recording"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/dimen_11sp"
+            android:gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/dimen_5dp"
+            android:layout_marginRight="@dimen/dimen_5dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/tv_stop"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:text="@string/stop_recording"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/dimen_11sp"
+            android:gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/dimen_5dp"
+            android:layout_marginRight="@dimen/dimen_5dp"
+            android:layout_weight="1"/>
+
+<!--
+        <TextView
+            android:id="@+id/tv_pause"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="@string/pause_recording"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/dimen_10sp"
+            android:gravity="center_horizontal"/>
+-->
+
+        <TextView
+            android:id="@+id/tv_play"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:text="@string/play_recording"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/dimen_11sp"
+            android:gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/dimen_5dp"
+            android:layout_marginRight="@dimen/dimen_5dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/tv_stop_play"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:text="@string/stop_playing_audio"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/dimen_11sp"
+            android:gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/dimen_5dp"
+            android:layout_marginRight="@dimen/dimen_5dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+
+
+    </LinearLayout>
+</RelativeLayout>
