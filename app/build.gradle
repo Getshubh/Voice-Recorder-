@@ -8,18 +8,18 @@ android {
         release {
             keyAlias 'Getshubh'
             keyPassword 'Getshubh@7'
-            storeFile file('C:\\Users\\ss00683182\\AndroidStudioProjects\\Voice Recorder\\app\\voice_recorder.jks')
+            storeFile file('D:\\shubh_project\\Voice Recorder\\Voice Recorder\\app\\voice_recorder.jks')
             storePassword 'Getshubh@7'
         }
     }
-    compileSdkVersion 29
+    compileSdkVersion 30
 
     defaultConfig {
         applicationId "com.getshubh.record"
         minSdkVersion 23
-        targetSdkVersion 29
-        versionCode 4
-        versionName "3.1"
+        targetSdkVersion 30
+        versionCode 5
+        versionName "3.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -41,7 +41,7 @@ android {
 dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation "androidx.recyclerview:recyclerview:1.1.0"
+    implementation "androidx.recyclerview:recyclerview:1.2.0"
     implementation "androidx.recyclerview:recyclerview-selection:1.1.0"
     implementation 'com.google.android.material:material:1.3.0'
     implementation "androidx.cardview:cardview:1.0.0"
@@ -51,6 +51,7 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui:2.3.3'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.0'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.0'
+    implementation 'com.google.android.gms:play-services-base:17.1.0'
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

@@ -31,7 +31,7 @@ public class TransparentPermissionActivity extends Activity {
 
     private void checkPermissions() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            String[] permissions = new String[]{Manifest.permission.RECORD_AUDIO, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA};
+            String[] permissions = new String[]{Manifest.permission.RECORD_AUDIO, Manifest.permission.WRITE_EXTERNAL_STORAGE};
             boolean permissionDeclined = false;
             for (String s : permissions)
                 if (checkSelfPermission(s) != PackageManager.PERMISSION_GRANTED)

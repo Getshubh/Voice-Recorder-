@@ -19,6 +19,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -46,6 +47,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TimeZone;
 
+import static android.Manifest.permission.MANAGE_EXTERNAL_STORAGE;
 import static android.Manifest.permission.RECORD_AUDIO;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
@@ -56,6 +58,7 @@ public class RecordingFragment extends Fragment {
     private static final int CHANNEL_ID_START_NOTIFICATION = 101;
     private static final String LOG_TAG = "AudioRecordering";
     private static final int REQUEST_CODE = 0;
+    private static final int REQ_CODE_MANAGE_ALL_APPS = 102;
     private static String mFileCompletePath = null;
     private static String mFileName;
     private final String TAG = RecordingFragment.class.getSimpleName();
@@ -290,11 +293,27 @@ public class RecordingFragment extends Fragment {
     }
 
     private void startButtonCLicked() {
-        if (checkPermissions()) {
-            playBatteryFullSound();
-            recordingStarted();
+        if ((android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.R && !Environment.isExternalStorageManager())) {
+            manageAppPermission();
         } else {
-            requestPermissions();
+            if (checkPermissions()) {
+                playBatteryFullSound();
+                recordingStarted();
+            } else {
+                requestPermissions();
+            }
+        }
+    }
+
+    private void manageAppPermission() {
+        try {
+            Log.d(TAG, "manageAppPermission");
+            Intent intent = new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
+            Uri uri = Uri.fromParts("package", getActivity().getPackageName(), null);
+            intent.setData(uri);
+            startActivity(intent);
+        }catch(Exception e){
+            Log.d(TAG,"Exception : "+e.toString());
         }
     }
 
@@ -553,45 +572,5 @@ public class RecordingFragment extends Fragment {
             stopButtonClicked();
     }
 
-/*
-    public class ButtonAnimationListener implements Animation.AnimationListener{
 
-        private View view;
-        public ButtonAnimationListener(View view){
-            this.view = view;
-        }
-
-
-        @Override
-        public void onAnimationStart(Animation animation) {
-
-        }
-
-        @Override
-        public void onAnimationEnd(Animation animation) {
-            switch (view.getId()){
-                case R.id.btnRecord:
-                    if (view.getTag().equals(R.drawable.ic_start_blue))
-                        startButtonCLicked();
-                    break;
-                case R.id.btnStop:
-                    if (view.getTag().equals(R.drawable.ic_stop_blue))
-                        stopButtonClicked();
-                    break;
-                case R.id.btnPlay:
-                    if (view.getTag().equals(R.drawable.ic_play_blue))
-                        playButtonClicked();
-                    break;
-                case R.id.btnStopPlay:
-                    if (view.getTag().equals(R.drawable.ic_stop_blue))
-                        stopPlayButtonClicked();
-                    break;
-            }
-        }
-
-        @Override
-        public void onAnimationRepeat(Animation animation) {
-
-        }
-    }*/
 }
